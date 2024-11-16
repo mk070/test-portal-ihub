@@ -3,21 +3,26 @@ import { Link } from 'react-router-dom';
 
 const GeneralHome = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center px-6">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full text-center">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-4">Welcome to Our Portal</h1>
-        <p className="text-gray-600 mb-6">
+    <div className="min-h-screen bg-yellow-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full bg-white shadow-xl rounded-2xl p-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Welcome to Our Portal</h1>
+        <p className="text-gray-600 mb-8 text-center">
           Select your role to access the services tailored for you.
         </p>
-        <div className="flex justify-center gap-4 flex-wrap">
+        <div className="grid grid-cols-1 gap-4">
           <Link
             to="/StudentLogin"
-            className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full py-3 text-center text-white bg-yellow-600 hover:bg-yellow-700 rounded-md text-lg font-medium focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
           >
             I am a Student
           </Link>
+          <Link
+            to="/staff/login"
+            className="w-full py-3 text-center text-white bg-yellow-600 hover:bg-yellow-700 rounded-md text-lg font-medium focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+          >
+            I am a Staff
+          </Link>
         </div>
-       
       </div>
     </div>
   );

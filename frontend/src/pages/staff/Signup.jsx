@@ -45,7 +45,7 @@ export default function Signup() {
         password: formData.password
       };
 
-      const response = await axios.post('/api/staff/signup', payload);
+      const response = await axios.post('http://localhost:8000/api/staff/signup/', payload);
       
       if (!response.data.success) {
         throw new Error(response.data.message || 'Signup failed');

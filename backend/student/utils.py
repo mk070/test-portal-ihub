@@ -28,5 +28,5 @@ class MongoDBConnection:
         return cls.get_connection()[collection_name]
 
 # Collections
-staff_collection = MongoDBConnection.get_collection("staff")
+# staff_collection = MongoDBConnection.get_collection("staff")
 student_collection = MongoDBConnection.get_collection("student")

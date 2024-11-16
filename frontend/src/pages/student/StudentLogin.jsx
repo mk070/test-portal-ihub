@@ -32,9 +32,9 @@ const StudentLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-        <h1 className="text-2xl font-semibold text-gray-800 text-center mb-6">Student Login</h1>
+    <div className="min-h-screen bg-yellow-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-md w-full">
+        <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">Student Login</h1>
         <form onSubmit={handleLogin} className="space-y-4">
           <div className="flex flex-col">
             <label htmlFor="email" className="mb-1 text-sm font-medium text-gray-600">
@@ -47,7 +47,7 @@ const StudentLogin = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="px-3 py-2 border rounded-md shadow-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              className="px-3 py-2 border rounded-md shadow-sm border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
             />
           </div>
           <div className="flex flex-col">
@@ -61,18 +61,18 @@ const StudentLogin = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              className="px-3 py-2 border rounded-md shadow-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+              className="px-3 py-2 border rounded-md shadow-sm border-gray-300 focus:ring-yellow-500 focus:border-yellow-500"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+            className="w-full py-3 text-white bg-yellow-600 hover:bg-yellow-700 rounded-md text-lg font-medium focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
           >
             Login
           </button>
 
-          <div className="mt-4 text-sm text-gray-600">
-            New student? <Link to="/StudentRegister" className="text-blue-600 hover:text-blue-700">Register here</Link>
+          <div className="mt-4 text-sm text-gray-600 text-center">
+            New student? <Link to="/StudentRegister" className="text-yellow-600 hover:text-yellow-700">Register here</Link>
           </div>
         </form>
       </div>

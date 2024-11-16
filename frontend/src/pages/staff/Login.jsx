@@ -25,7 +25,7 @@ export default function Login() {
     setError('');
     
     try {
-      const response = await axios.post('/api/staff/login', formData);
+      const response = await axios.post('/api/staff/login/', formData);
       localStorage.setItem('staffToken', response.data.token);
       navigate('/staff/dashboard');
     } catch (err) {
