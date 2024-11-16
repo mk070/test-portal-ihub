@@ -12,6 +12,7 @@ const StudentRegister = () => {
     dept: '',
     regno: '',
   });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +25,7 @@ const StudentRegister = () => {
     try {
       const response = await axios.post('http://localhost:8000/api/student/signup/', formData);
       
-      if (response.status === 200) {
+      if (response.status === 201) {
         alert('Registration successful! Please log in.');
         navigate('/StudentLogin');
       }
@@ -33,7 +34,8 @@ const StudentRegister = () => {
         alert('Cannot connect to server. Please make sure the server is running.');
       } else {
         console.error('Registration error:', error);
-        alert(error.response?.data?.message || 'Registration failed. Please try again.');
+        const errorMessage = error.response?.data?.error || 'Registration failed. Please try again.';
+        setError(errorMessage);
       }
     }
   };
@@ -42,6 +44,7 @@ const StudentRegister = () => {
     <div className="min-h-screen bg-yellow-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-xl rounded-2xl p-8 max-w-md w-full">
         <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">Student Register</h1>
+        {error && <div className="mb-4 text-red-600 text-center">{error}</div>}
         <form onSubmit={handleRegister} className="space-y-4">
           <div className="flex flex-col">
             <label htmlFor="name" className="mb-1 text-sm font-medium text-gray-600">
@@ -90,7 +93,7 @@ const StudentRegister = () => {
               Register No:
             </label>
             <input
-              type="number"
+              type="text"
               id="regno"
               name="regno"
               value={formData.regno}

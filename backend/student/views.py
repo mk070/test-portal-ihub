@@ -83,15 +83,13 @@ def student_signup(request):
             "password": make_password(data.get("password")),
             "collegename": data.get("collegename"),
             "dept": data.get("dept"),
-            "college": data.get("college"),
-            "reg": data.get("reg"),
             "regno": data.get("regno"),
             "created_at": datetime.now(),
             "updated_at": datetime.now(),
         }
 
         # Validate required fields
-        required_fields = ["name", "email", "password", "dept", "college", "reg"]
+        required_fields = ["name", "email", "password", "dept", "collegename", "regno"]
         missing_fields = [field for field in required_fields if not data.get(field)]
         if missing_fields:
             return Response(
