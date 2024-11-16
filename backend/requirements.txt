@@ -1,0 +1,5 @@
+Django
+djangorestframework
+pymongo
+djongo
+python-dotenv
